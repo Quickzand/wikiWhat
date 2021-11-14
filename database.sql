@@ -1,0 +1,5 @@
+CREATE TABLE USERS (
+username VARCHAR(256),
+pass VARCHAR(256),
+PRIMARY KEY username
+);
