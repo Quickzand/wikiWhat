@@ -1,5 +1,17 @@
-CREATE TABLE USERS (
+DROP TABLE users;
+DROP TABLE leaderboard;
+
+
+CREATE TABLE users (
 username VARCHAR(256),
 pass VARCHAR(256),
-PRIMARY KEY username
+UUID VARCHAR(256),
+PRIMARY KEY (UUID)
+);
+
+CREATE TABLE leaderboard (
+UUID VARCHAR(256),
+score INT,
+
+FOREIGN KEY (UUID) REFERENCES users(UUID)
 );
