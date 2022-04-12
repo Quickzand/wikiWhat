@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>wiki what?</title>
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/play.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/apis.js" async defer></script>
     <script src="js/main.js" async defer></script>
+    <script src="js/gameController.js" async defer></script>
 </head>
 
 <body>
@@ -35,19 +37,70 @@
             </div>
             <div id="userIcon">
                 <img src="images/Default Profile Pic.png" alt="User Profile Picture">
+                <div id="userMenu" class="hidden">
+                    <div class="userMenuItem">
+                        Profile
+                    </div>
+                    <div class="userMenuItem">
+                        Logout
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
+    <div id="question">
+        <div id="questionHeader">
+            <div id="questionTitle">
+                What article does this <span id="mediaType">image</span> come from?
+            </div>
 
-    <div class="heading">
-        Welcome to wikiWhat, a game based on the site wikiHow
+            <div id="mediaSamples">
+                <div class="mediaSample">
+                    <img src="images/sampleImage.jpeg" alt="Sample Image">
+                </div>
+                <div id="addMediaButton">
+                    <div id="addMediaText" onclick="addHint()">
+                        + Want another hint?
+                    </div>
+
+                </div>
+            </div>
+            <div id="questionPoints">
+                Points: <span id="questionPointsNumber">200</span>
+            </div>
+        </div>
+        <div id="answers">
+            <div class="answer">
+                How to sell drugs
+            </div>
+            <div class="answer">
+                How to make money
+            </div>
+            <div class="answer">
+                How to fake your own death
+            </div>
+            <div class="answer">
+                How to buy drugs
+            </div>
+            <div class="answer">
+                How to swim fast and eat ass
+            </div>
+            <div class="answer">
+                How to make a 6th answer
+            </div>
+        </div>
     </div>
+    <div id="nextQuestionButton" class="hidden" onclick="nextQuestion()">Next Question</div>
 
+    <div id="totalScore">
+        Score: <span id="scoreNumber">100</span>
+    </div>
 
     <script>
         document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
             ':35729/livereload.js?snipver=1"></' + 'script>')
     </script>
+    <script src="js/nav.js"></script>
 </body>
 
 </html>
